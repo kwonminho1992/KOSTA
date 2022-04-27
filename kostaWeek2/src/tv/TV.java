@@ -9,9 +9,18 @@ class for creating TV object
 */
 public class TV {
 	//variables
-	boolean power;
-	int channel = 0;
-	int volume = 0;
+	private boolean power;
+	private int channel = 0;
+	private int volume = 0;
+	
+	/**
+	 * set power variable == true
+	 * @return power (true)
+	 */
+	public boolean powerOn() {
+		this.power = true;
+		return power;
+	}
 	
 	/**
 	 * @return return power is true or not
@@ -26,8 +35,11 @@ public class TV {
 	 * @param channel : channel number
 	 */
 	public void setChannel (int channel) { // set channel number from user's input
-		if (channel > 0) { // minus channel number is not available
+		if (channel >= 0) { // minus channel number is not available
 			this.channel = channel;
+		} else {
+			System.out.println("minus channel number is not available");
+			return;
 		}
 	}
 	
