@@ -1,4 +1,4 @@
-package classPractice;
+package classpractice;
 
 public class FinalPractice {
 

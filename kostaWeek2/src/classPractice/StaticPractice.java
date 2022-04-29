@@ -1,4 +1,4 @@
-package classPractice;
+package classpractice;
 
 /**
  * usage of static
