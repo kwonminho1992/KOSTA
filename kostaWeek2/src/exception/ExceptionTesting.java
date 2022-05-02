@@ -11,8 +11,34 @@ public class ExceptionTesting {
 		int j = 99 % i;
 		System.out.println("99를 " + i + "로 나눈 나머지값은 " + j);
 	}
+	
+//	public static void test (Object object) { // try-catch version
+//		try {
+//			String str = object.toString(); //NullPointerException 발생 가능
+//			System.out.println(str);
+//		} catch (NullPointerException e) {
+//			System.out.println("object가 null입니다. (NullPointerException)");
+//		}
+//		
+//	}
+	public static void test (Object object) throws NullPointerException { // throws version
+		String str = object.toString(); // NullPointerException 발생시, main method(test method가 사용되는 곳)로 떠넘김
+		System.out.println(str);
+}
+	
 	public static void main(String[] args) {
 		//예외처리 예시
+		
+		//throws 예시
+		//test method를 호출하는 곳에서 try~catch로 예외를 처리함
+		try {
+			test(new Object());
+			test(null); 
+		} catch (NullPointerException e) {
+			System.out.println("argument가 null값입니다.");
+		}
+		
+		//try~catch 예시
 		Scanner sc = new Scanner(System.in);
 		System.out.print("숫자를 입력하세요:"); 
 		// 0 입력시 java.lang.ArithmeticException: / by zero exception 발생

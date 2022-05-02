@@ -1,6 +1,7 @@
 package com.my.repository;
 
 import com.my.dto.Product;
+import com.my.exception.AddException;
 
 /**
  * add, revise, inquire, delete products in repository
@@ -26,14 +27,14 @@ public class ProductRepository {
 	 * add products into repository
 	 * @param product
 	 */
-	public void insert(Product products) {
+	public void insert(Product products) throws AddException {
 		try {
-			this.products[count] = products;
+			this.products[count] = products; //deposit products into products[] array 
 			count++;
 			//this.products[count++] = products; //-> bad code. unary operator is dangerous with other operators
 			//System.out.println("등록된 상품종류의 개수 : " + count);
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("ERROR : repository is full! current number of products : " + count);
+		} catch (ArrayIndexOutOfBoundsException e) { // 배열의 범위를 벗어날 경우 throw 를 통해 AddException 예외 발생
+			throw new AddException("ERROR : repository is full! current number of products");
 		}
 	}
 	
@@ -50,7 +51,6 @@ public class ProductRepository {
 	}
 	
 	/**
-	 * 
 	 * @return count
 	 */
 	public int getCount() {

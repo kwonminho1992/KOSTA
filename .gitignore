@@ -4,6 +4,8 @@
 
 # folder
 .metadata/
+Crawling-articles-by-search-word/
+crawling/
 
 ### Java ###
 # Compiled class file
