@@ -14,6 +14,7 @@ public class ShareObject {
 		System.out.println("hashcod (push.s) = " + push.s.hashCode());
 		pop.start();
 		push.start();
+	
 	}
 }
 
@@ -27,7 +28,9 @@ class Share extends Thread {
 	}
 	
 	public void push() { //필드값 i 1증가
-		synchronized (this) { // 동기화처리
+		synchronized (this) { // 임계영역의 설정(동기화처리)
+			notify(); // push()가 실행되면 wait set에 있는 pop()을 깨워서 활동가능(Runnable)상태로 만듦
+			// *만약에 복수의 thread가 wait set 상태에 있는 경우, wait set은 queue 구조이므로 첫번째 인덱스 부터 깨운다.
 			System.out.print("before push : i = " + this.i);
 			this.i++;
 			System.out.println(" / after push : i = " + this.i);
@@ -35,10 +38,17 @@ class Share extends Thread {
 	}
 	
 	public void pop() { //필드값 i 1감소
-		synchronized (this) { // 동기화처리
-			System.out.print("before push : i = " + this.i);
+		synchronized (this) { // 임계영역의 설정(동기화처리)
+			if (i == 0) {
+				try {
+					wait(); // pop()을 wait set으로 넣기 (wait set에 들어간 thread는 일시정지 상태가 됨)
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			System.out.print("before pop : i = " + this.i);
 			this.i--;
-			System.out.println(" / after push : i = " + this.i);
+			System.out.println(" / after pop : i = " + this.i);
 		}	
 	}
 }
@@ -53,7 +63,7 @@ class Push extends Thread {
 	
 	@Override
 	public void run() { // 객체 s의 push() method 10회 호출
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) {			
 			s.push();// 객체 s의 필드값 i를 1 증가시킴
 		}
 	}

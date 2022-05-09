@@ -68,10 +68,10 @@ class Horse extends Canvas implements Runnable {
 	public void run() { // thread 생성
 		for (int i = 0; i < 20; i++) {
 			x += 20;
-			repaint(); //화면클리어 -> paint() method 자동호출
+			this.repaint(); //화면클리어 -> paint() method 자동호출
 			long millis = (long) (Math.random() * 1000);
 			try {
-				Thread.sleep(millis);
+				Thread.sleep(millis); // 최대 1000 milli second동안 일시중지
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -94,6 +94,7 @@ public class Race {
 			Thread one = new Thread(horses[0]);
 			Thread two = new Thread(horses[1]);
 			Thread three = new Thread(horses[2]);
+			//thread 3갸 시작
 			one.start();
 			two.start();
 			three.start();
@@ -130,22 +131,38 @@ public class Race {
 		
 //		MyHandler myHandler = new MyHandler();
 //		btReady.addActionListener(myHandler);
-		btReady.addActionListener(
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						//System.out.println("준비되었습니다");
-						jtf.setText("준비되었습니다");
-					}
-				}
-		);
+		//익명클래스 방식
+//		btReady.addActionListener(
+//				new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						jtf.setText("준비되었습니다");
+//						for (Horse horse : horses) { // 말 한마리씩 준비시키기
+//							horse.x = 0;
+//							horse.repaint();
+//						}
+//					}
+//				}
+//		);
+		//람다식 방식
+		btReady.addActionListener((ActionEvent e) -> {
+			//할일 작성
+			jtf.setText("준비되었습니다");
+			for (Horse horse : horses) { // 말 한마리씩 준비시키기
+				horse.x = 0;
+				horse.repaint();
+			}			
+		});
+		
 		
 		//btReady.addActionListener(new ActionListener());
 		btStart.addActionListener(
 				//new MyRunHandler(jtf)
 				new MyRunHandler()
+				
 		);
 		
 		
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // close process when click X button
 		
 		
 		

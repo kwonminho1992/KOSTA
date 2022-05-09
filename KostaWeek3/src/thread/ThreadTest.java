@@ -43,7 +43,7 @@ class First extends Thread { // Thread class를 상속받으면 thread로 생성
 }
 
 class Second implements Runnable { // Runnable interface를 상속받으면 thread로 생성가능	
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd(EEE) HH:mm:ss");
 	@Override
 	public void run() {//run() meathod를 overriding 해서 thread가 할일을 정해줘야함
 		for (int i = 0; i < 50; i++) {
