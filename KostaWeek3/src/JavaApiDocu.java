@@ -1,19 +1,17 @@
-import java.time.LocalDateTime;
-import java.time.chrono.ChronoLocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.Locale;
+import java.text.DecimalFormat;
+import java.text.FieldPosition;
 
 public class JavaApiDocu {
 
 	public static void main(String[] args) {
-		// 현재 날짜 & 시간 출력하기 (yyyy-mm-dd hh:mm:ss form)
-		System.out.println(LocalDateTime.now()); // 현재 날짜 & 시간
-
-		//출력 포멧 설정
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd EEE HH mm ss", Locale.KOREA); // 형식은 구글검색으로 찾기
-		System.out.println(dtf);
-		Date date = new Date();
+		// 베트남 동화(VND)로 숫자를 출력하기 
+		// 숫자를 출력할때, comma 추가 & 앞에 VND 추가
+		
+		int num1 = 1000000000; // 숫자
+		
+		DecimalFormat formatter = new DecimalFormat("#,###.####; (#,###.####)"); // 출력 포멧 설정 (양수; 음수)
+		StringBuffer sb = new StringBuffer("VND "); //숫자를 출력할때 앞에 추가할 스트링 (베트남 동화)
+		FieldPosition fp = new FieldPosition(0); // identifier 
+		System.out.println(formatter.format(num1, sb, fp)); // return formatted string from number
 	}
-
 }
