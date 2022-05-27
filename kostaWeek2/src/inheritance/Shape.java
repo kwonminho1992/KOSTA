@@ -126,5 +126,7 @@ public class Shape {
 //		rectangle2.calcArea(); // 정사각형의 면적 계산
 //		printArea(rectangle2); // 면적값을 반환받고, 출력
 //	}
+		
+	
 	}
 }
