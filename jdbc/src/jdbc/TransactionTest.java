@@ -45,9 +45,7 @@ public class TransactionTest {
 			}
 			e.printStackTrace();
 		} finally {
-			
+			MyConnection.close(pstat, con);
 		}
-
 	}
-
 }

@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class MyConnection {
 	static { // JDBC 클래스 로드는 한번만 하면 더 이상 할 필요가 없으므로 MyConnection 클래스가 로드될 때 자동호출되도록 static 블럭에 넣음
 		// 1. JDBC 드라이버 설치
-		// -> ojdbc8.jar 다운로드
+		// -> ojdbc8.jar 다운로드 & build path로 연결
 		// 2. JDBC 드라이버 클래스 로드
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver"); // Oracle driver 연결
@@ -33,7 +33,7 @@ public class MyConnection {
 	
 	//db와의 연결 해제
 	public static void close(ResultSet rs, Statement stat, Connection con) {
-		// 7. DB 와의 연결 해제
+		// 4.. DB 와의 연결 해제
 		if (rs != null) {
 			try {
 				rs.close(); // ResultSet 닫기
@@ -59,7 +59,7 @@ public class MyConnection {
 	
 	//db와의 연결 해제
 	public static void close(Statement stat, Connection con) {
-		// 7. DB 와의 연결 해제
+		// 4. DB 와의 연결 해제
 		close(null, stat, con);
 	}
 }

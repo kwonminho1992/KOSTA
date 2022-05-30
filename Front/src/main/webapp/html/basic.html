@@ -1,0 +1,135 @@
+<!DOCTYPE html> <!-- defines that this document is an HTML5 document -->
+<html> <!-- the root element of an HTML page -->
+	<head> <!--  contains meta information about the HTML page -->
+		<meta charset= "UTF-8">
+	</head>
+	<body> <!--  defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc. -->
+		<!--  머리말, 제목에 관련한 태그 -->
+		<h1>찬물로 샤워하면 ‘○○○’에 좋다</h1>
+		<h2>찬물로 샤워하면 ‘○○○’에 좋다</h2>
+		<h3>찬물로 샤워하면 ‘○○○’에 좋다</h3>
+		<h4>찬물로 샤워하면 ‘○○○’에 좋다</h4>
+		<h5>찬물로 샤워하면 ‘○○○’에 좋다</h5>
+		<h6>찬물로 샤워하면 ‘○○○’에 좋다</h6>
+		
+		<!-- 단락에 관련한 태그 -->
+		<p style="background-color:red">“찬물로 샤워하면 의사가 필요 없다.” ‘아이스맨’으로 불리는 네덜란드 출신 윔 호프가 한 말이다.<br> 
+		얼음을 깨고 들어간 물속에서 7분간 숨을 참고, 얼음 욕조에서 1시간 53분을 앉아있는 그는 찬물 샤워가 건강에 도움이 된다고 주장한다. <br>
+		그런데 실제로 찬물 샤워가 면역력을 높이는 데 도움이 된다는 연구 결과가 나왔다. </p>
+		<p style="color:rgb(100, 100, 100)">네덜란드 암스테르담대학교 연구팀은 실험 참가자 3000명에게 매일 샤워할 때마다 30~90초간 찬물에 노출되도록 했다. <br>
+		그 결과, 찬물로 샤워한 학생은 그렇지 않은 학생보다 질병으로 인한 결석·결근율이 약 29% 낮았다. 또 운동까지 규칙적으로 한 경우에는 결석·결근율이 54% 낮아졌다. <br>
+		다만 찬물 노출 시간에 따른 효과는 별다른 차이가 없었다.</p>
+		<p style="background-color:pink;color:#AA99BA">연구팀에 따르면 찬물 샤워는 뇌를 활성화하고 몸을 깨워 활력을 증진시킨다. 면역 체계를 강화한다고도 설명했다. <br>
+		하지만 찬물 샤워를 할 때는 갑작스럽게 낮은 온도의 물과 접촉하는 것보다 우선 따뜻한 물로 몸을 데운 뒤, 단계적으로 온도를 낮추다가 찬물로 마무리하는 것이 좋다고 조언했다.</p>
+		<p>이외에도 운동 후에 찬물로 샤워하면 염증과 피로감을 줄이는 데에도 효과적이다. 민감한 피부에도 찬물 샤워가 좋다. <br> 펜실베이니아 대학병원 피부과 캐리 코바릭 부교수는 
+		“냉수 샤워나 얼음 찜질 등은 가려움증을 극복하는 데 도움이 된다”고 조언했다.<br> 차가운 물로 샤워하는 것이 냉각·소염 효과로 인해 가려움증을 줄이는 데 효과적이라는 설명이다.</p>
+		<p>다만 따뜻한 물로 샤워하는 게 나쁜 것만은 아니다. 폐건강연구소에 따르면 온수로 샤워시 발생하는 수증기로 목과 코에 있는 가래가 풀리기 때문에 코를 맑게 하는 데 좋다. <br>
+		또 연구에 따르면 잠들기 전 20분간 따뜻한 물로 샤워하면 더 빨리 잠들게 돕고, 수면의 질도 향상시키는 것으로 나타났다.</p>
+		
+		<!-- quotation -->
+		<address>
+		주소 <br>
+		동아일보 회사소개| 문화스포츠사업| 신문박물관| 인촌기념회| 화정 평화재단| 신문광고안내| 구독신청| 독자서비스| 기사제보| 정정보도 신청 <br>
+		주소: 서울특별시 종로구 청계천로 1 | 대표번호: 02-2020-0114
+		</address>
+		
+		<!--  Link -->
+		<br>
+		<a href="https://www.w3schools.com/html/html_links.asp">link tag examples</a><br>
+		<a href="./profile.html">profile</a><br> <!-- 상대경로 -->
+		<a href="http://localhost:8888/Front/html/self-introduction.html" target="_blank">self_introduction</a><br> <!-- 절대경로 -->
+		
+		<!-- image -->
+		<img src="https://dimg.donga.com/wps/NEWS/IMAGE/2022/05/30/113698047.2.jpg" alt="찬물로 샤워하는 여자" width="200" height="250"><br> <!-- 절대경로 -->
+		<img src="../images/shower.jpg" alt="찬물로 샤워하는 여자" width="50%"> <!-- 상대경로 --> <!-- width:50% = 부모 태그 크기의 50% -->
+		
+		<!-- 표 만들기 -->
+		<table style="border:1px solid; width:50%"> <!-- width:50% = 부모 태그 크기의 50% -->
+			<thead> <!-- tr: row, th: column -->
+				<tr>
+					<th>종류
+					</th>
+					<th>원산지
+					</th>					
+				</tr>
+			</thead>
+			<tbody> <!-- tr: row, td: column -->
+				<tr>
+					<td rowspan="2">녹차 <!-- 행 합치기 -->
+					</td>
+					<td>보성
+					</td>					
+				</tr>
+				<tr>
+					<td>대만
+					</td>					
+				</tr>
+				<tr>
+					<td>바나나
+					</td>
+					<td>필리핀
+					</td>					
+				</tr>
+				<tr>
+					<td>오렌지
+					</td>
+					<td>캘리포니아
+					</td>					
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2" style="border:1px solid">맺음말
+					</td>				
+				</tr>
+			</tfoot>
+		</table>
+		<!-- thead,tbody,tfoot은 생략 가능, 일반적으로 생략함 -->
+		<table style="border:1px solid; width:50%"> <!-- width:50% = 부모 태그 크기의 50% -->
+		<tr>
+			<th>종류</th>
+			<th>원산지</th>
+		</tr>
+		<tr>
+			<td rowspan="2">녹차 <!-- 행 합치기 -->
+			</td>
+			<td>보성</td>
+		</tr>
+		<tr>
+			<td>대만</td>
+		</tr>
+		<tr>
+			<td>바나나</td>
+			<td>필리핀</td>
+		</tr>
+		<tr>
+			<td>오렌지</td>
+			<td>캘리포니아</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border: 1px solid">맺음말</td>
+		</tr>
+	</table>
+	
+	<!-- list -->
+	<!-- unordered list -->
+	<ul>
+		<li>국어</li>
+		<li>영어</li>
+		<li>수학</li>
+	</ul>	
+	<!-- ordered list -->
+	<ol>
+		<li>국어</li>
+		<li>영어</li>
+		<li>수학</li>
+	</ol>
+	
+	<!-- block tag(태그 사용시 자동 줄바꿈) & inline tag(태그 사용시 자동 줄바꿈이 되지 않음) -->
+	<div style="background-color:pink">div1</div>
+	<div style="background-color:yellow">div2</div>
+	<span style="background-color:red">span1</span>
+	<span style="background-color:blue">span2</span>
+	</body>
+</html>
+
