@@ -1,7 +1,7 @@
 <!DOCTYPE html> <!-- defines that this document is an HTML5 document -->
 <html> <!-- the root element of an HTML page -->
 	<head> <!--  contains meta information about the HTML page -->
-		<meta charset= "UTF-8">
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"> 
 	</head>
 	<body> <!--  defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc. -->
 		<!--  머리말, 제목에 관련한 태그 -->
@@ -125,11 +125,15 @@
 		<li>수학</li>
 	</ol>
 	
-	<!-- block tag(태그 사용시 자동 줄바꿈) & inline tag(태그 사용시 자동 줄바꿈이 되지 않음) -->
-	<div style="background-color:pink">div1</div>
-	<div style="background-color:yellow">div2</div>
-	<span style="background-color:red">span1</span>
-	<span style="background-color:blue">span2</span>
+	<!-- block tag(태그 사용시 자동 줄바꿈, 크기 지정 가능, 상하좌우 margin을 가짐) & inline tag(태그 사용시 자동 줄바꿈이 되지 않음, 크기 지정 불가능, 상하 margin을 안가짐) -->
+	<div style="background-color:pink; width:200px; border:1px; margin:50px; padding:10px">div1</div>
+	<div style="background-color:yellow; width:200px; border:1px; margin:50px; padding:10px; 
+				display:inline">div2 (inline) </div> <!-- display:inline = inline tag로 속성 변경 -->
+	<div style="background-color:yellow; width:200px; border:1px; margin:50px; padding:10px; 
+				display:inline-block">div3 (inline-block) </div> <!-- display:inline-block = 줄바꿈은 안됨, 크기 지정은 가능, 상하margin을 가짐 -->
+	<span style="background-color:red; width:200px; border:1px; margin:50px; padding:10px">span1</span>
+	<span style="background-color:blue; width:200px; border:1px; margin:50px; padding:10px; 
+				display:block">span2 (block) </span> <!-- display:block = block tag로 속성 변경 -->
 	</body>
 </html>
 

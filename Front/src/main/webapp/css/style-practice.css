@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* tag의 class가 sample인 경우, .sample의 style을 일괄 적용시킴 */
+.sample {
+	background-color: pink;
+	width: 200px;
+	border: 1px;
+	margin: 50px;
+	padding: 10px;
+}
+/* ㅑd가 div3인 경우, #div3의 style을 일괄 적용시킴, id는 하나의 tag만 가질 수 있음 */
+#div3 {
+	background-color: blue;
+	width: 100px;
+	border: 10px;
+	margin: 40px;
+	padding: 10px;
+}
