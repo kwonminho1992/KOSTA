@@ -8,6 +8,9 @@ Crawling-articles-by-search-word/
 crawling/
 product_management/
 
+# error file
+css_layout.css
+
 ### Java ###
 # Compiled class file
 *.class
