@@ -3,6 +3,20 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>js_event</title>
+    <style>
+        div.select>select.district {
+            display:none;
+        }
+        div.keyboard>input[type=text]:focus {
+            background-color: #ab12f0;
+        }
+        div.a {
+            border:1px solid;
+            padding:40px;
+            margin:30px;
+        }
+
+    </style>
     <script src="../js/event.js"></script>
 </head>
 <body>
@@ -10,5 +24,53 @@
     <button>클릭</button>
     <!--inline script-->
     <!-- <button onclick="alert('클릭되었습니다')">CLICK</button> -->
+
+    <div class="calculator">
+        <div class="result">RESULT</div>
+        <button>1</button><button>2</button><button>3</button><br>
+        <button>4</button><button>5</button><button>6</button><br>
+        <button>7</button><button>8</button><button>9</button><br>
+        <button>0</button><br>
+        <button class="plus">+</button><button class="equal">=</button><br>
+
+    </div>
+    <br><br>
+    <div class="checkbox">
+        <fieldset>
+            <legend><input type="checkbox">ALL</legend>
+            <input type="checkbox"><span>ONE</span>&nbsp;&nbsp;
+            <input type="checkbox" checked="checked"><span>TWO</span>&nbsp;&nbsp;
+            <input type="checkbox"><span>THREE</span>      
+        </fieldset>   
+    </div>
+    <br><br>
+
+    <div class="select">
+        <select class="province">
+            <option>시/도 선택</option>   
+            <option selected>경기도</option>
+            <option>강원도</option>                    
+        </select>   
+        <select class="district">                 
+        </select>
+    </div>
+    <br><br>
+
+    <div class="keyboard">
+        <input type="text">
+    </div>
+    <br><br>
+
+    <div class="submit">
+        <form method="get" action="https://www.naver.com">
+            <input type="text" name="t" value="text"><br>
+            <button>전송</button> <!--input type='submit'과 같음-->
+        </form>
+    </div>
+    <br><br>
+
+    <div class="a">
+        <a href="https://www.naver.com">NAVER</a> 
+    </div>
 </body>
 </html>
