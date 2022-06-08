@@ -85,12 +85,16 @@ window.addEventListener("load", function(){
                 selectDistrictObj.style.display = 'inline';
                 break;
             case '강원도':
-                selectDistrictObj.innerHTML = '';
-                var gangwon = '<option>시/군/구 선택</option>';
-                gangwon+= '<option>원주시</option>';
-                gangwon+= '<option>철원군</option>';
-                gangwon+= '<option>강릉시</option>';
-                selectDistrictObj.innerHTML = gangwon;
+                while (selectDistrictObj.childNodes.length != 0) { // *참고 : for loop 는 삭제 알고리즘 구현에 부적합함
+                    selectDistrictObj.removeChild(selectDistrictObj.firstChild);
+                }
+                var gangwon = ['시/군/구 선택', '강릉시', '철원군', '원주시'];
+                for (var i = 0; i < gangwon.length; i++) {
+                    var opt = document.createElement('option');
+                    var txt = document.createTextNode(gangwon[i]);
+                    opt.appendChild(txt);
+                    selectDistrictObj.appendChild(opt);
+                }
                 selectDistrictObj.style.display = 'inline';
                 break;
             default:
@@ -118,12 +122,12 @@ window.addEventListener("load", function(){
 
     //----submit start----
     //전송관련 이벤트 처리순서 : button의 click 이벤트 -> form의 submit 이벤트 -> submit 이벤트 기본 처리(전송작업 in JS)
-    var submitObj = document.querySelector('div.submit>form>button');
     var formObj = document.querySelector('div.submit>form');
-    var textSubmitObj = document.querySelector('div.submit>form>input[name=t]');
-    // submitObj.addEventListener('click', function(){
-    //     alert(this + "전송버튼클릭 event가 발생하였습니다");
-    // }); 
+    var textSubmitObj = formObj.firstElementChild;
+    var btnSubmitObj = formObj.lastElementChild;
+    btnSubmitObj.addEventListener('click', function(){
+        console.log('클릭되었습니다')
+    });   
     formObj.addEventListener('submit', function(event){
         if (textSubmitObj.value == '') {
             alert('값을 입력하세요');
@@ -150,4 +154,11 @@ window.addEventListener("load", function(){
     });  
     //----a end----   
 
+
+    // -------- htmlCollection & nodeList -----------------
+    var htmlCollection = document.getElementsByTagName('input');
+    var nodeList = document.querySelectorAll('input');
+    console.log(htmlCollection);
+    console.log('----------------');
+    console.log(nodeList);
 });
