@@ -157,4 +157,14 @@
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CalculatorServlet</display-name>
+    <servlet-name>CalculatorServlet</servlet-name>
+    <servlet-class>com.my.control.CalculatorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CalculatorServlet</servlet-name>
+    <url-pattern>/calculator</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -47,7 +47,7 @@ public class ViewProductServlet extends HttpServlet {
 			request.setAttribute("product_no", p.getProductNo());
 			
 			//4. 프론트페이지로 이동 
-			String path = "/front/html/viewproduct.html";
+			String path = "/frontend/html/viewproduct.html";
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 

@@ -19,9 +19,7 @@ import javax.servlet.http.HttpSession;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.my.sql.MyConnection;
 
-/**
- * Servlet implementation class RequestServlet
- */
+
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,6 +29,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//응답 형식 설정 (MIME;encoding)
 		response.setContentType("application/json;charset=UTF-8");
+		System.out.println("PrintWriter out = response.getWriter();이전");
 		PrintWriter out = response.getWriter();
 		ObjectMapper mapper = new ObjectMapper(); // 객체를 json 형식으로 바꾸기
 		Map<String, Object>map = new HashMap<>(); 
@@ -83,9 +82,6 @@ public class LoginServlet extends HttpServlet {
 //			RequestDispatcher rd = request.getRequestDispatcher(path); // 페이지를 path로 이동 
 //			rd.include(request, response);
 //		}
-
-		
-		
 
 	}
 }
