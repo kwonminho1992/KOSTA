@@ -29,7 +29,7 @@ public class ViewProductServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		//1. front로부터 productNo 받기
 		String productNo = request.getParameter("product_no");
-		System.out.println(productNo);
+		System.out.println("ViewProductServlet ProductNo : " + productNo);
 		//2. DB에서 상품 검색
 		ProductRepository repository = new ProductOracleRepository();
 		String result = "";
