@@ -17,3 +17,4 @@ arr.pop(); // arr의 마지막요소 빼기 [1, 10, 3]
 arr.unshift(9); // arr의 맨앞에 9 추가 [9, 1, 10, 3]
 arr.shift(); // arr의 첫번째요소 빼기 [1, 10, 3]
 arr.indexOf(3); // 3의 index인 2를 반환
+
